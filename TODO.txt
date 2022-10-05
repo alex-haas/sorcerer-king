@@ -1,10 +1,14 @@
+General:
+    Add config and honor config
 Blocks:
     Ore - Mana stones
 Items:
     Magically Enhanced Blade (Used to inscribe / craft magic items)
     Mana Cube
+    Mod Book
 Mechanics:
     Using skills increases efficiency
+    Talent tree for passives?
     Equip Skills inside Mana Cube - Switch with mouse wheel
 Skills:
     Level 1:
