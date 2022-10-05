@@ -10,8 +10,8 @@ public class SorcererKing implements ModInitializer {
     @Override
     public void onInitialize() {
         Constants.LOGGER.info("Hello Fabric world from Server!");
-        ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+        ModItems.registerModItems();
         ModBiomeModifications.registerBiomeModifications();
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sorcerer-king:block/mana_block"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "sorcerer-king:block/mana_block" }
+  }
+}
