@@ -1,7 +1,9 @@
 General:
     Add config and honor config
 Blocks:
-    Ore - Mana stones
+    Ore - which splits into shards when mined
+    Mana Shards
+    Mana Block - made from 9 Mana Shards
 Items:
     Magically Enhanced Blade (Used to inscribe / craft magic items)
     Mana Cube
@@ -10,9 +12,12 @@ Mechanics:
     Using skills increases efficiency
     Talent tree for passives?
     Equip Skills inside Mana Cube - Switch with mouse wheel
+    Portals (Spawned by world gen? Spawn Monsters around them? Wave principle - Drops rare materials when closed. Should have Grades like in the Manga)
 Skills:
     Level 1:
         Heal
         Repair
     Level 2:
         Sleep   ( 60sec - Dmg will wake the monster up )
+    Level ?
+        Transmutation (Iron -> Gold, Coal -> Diamonds)
