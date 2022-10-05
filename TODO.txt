@@ -1,0 +1,14 @@
+Blocks:
+    Ore - Mana stones
+Items:
+    Magically Enhanced Blade (Used to inscribe / craft magic items)
+    Mana Cube
+Mechanics:
+    Using skills increases efficiency
+    Equip Skills inside Mana Cube - Switch with mouse wheel
+Skills:
+    Level 1:
+        Heal
+        Repair
+    Level 2:
+        Sleep   ( 60sec - Dmg will wake the monster up )

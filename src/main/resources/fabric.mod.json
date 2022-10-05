@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "sorcerer_king",
+  "version": "${version}",
+  "name": "Sorcerer King",
+  "description": "A mod heavily inspired by the manga 'I am the Sorcerer King'",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/sorcerer_king/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.sorcerer_king.client.SorcererKingClient"
+    ],
+    "main": [
+      "com.sorcerer_king.SorcererKing"
+    ]
+  },
+  "mixins": [
+    "sorcerer_king.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
