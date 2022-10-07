@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "WWW",
-    "WWW ",
+    "WWW",
     "WWW"
   ],
   "key": {
     "W": {
-      "tag": "sorcerer-king:mana_gem"
+      "item": "sorcerer-king:mana_gem"
     }
   },
   "result": {

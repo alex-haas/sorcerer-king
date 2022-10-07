@@ -1,12 +1,7 @@
 General:
     Add config and honor config
 Blocks:
-    Ore - which splits into shards when mined
-    Mana Shards
-    Mana Block - made from 9 Mana Shards
 Items:
-    Magically Enhanced Blade (Used to inscribe / craft magic items)
-    Mana Cube
     Mod Book
 Mechanics:
     Using skills increases efficiency
@@ -26,3 +21,13 @@ Skills:
     Level ?
         Transmutation (Iron -> Gold, Coal -> Diamonds)
         Shield II + Shield III (different levels of same skills)
+
+
+Done so far:
+Blocks:
+    Mana Ore -> Outputs 2-4 Mana Gems when mined
+    Mana Block
+Items:
+    Magic Chisel
+    Mana Gems
+    Mana Cube

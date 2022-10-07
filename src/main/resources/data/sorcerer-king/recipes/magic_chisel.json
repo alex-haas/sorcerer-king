@@ -7,10 +7,10 @@
   ],
   "key": {
     "W": {
-      "tag": "sorcerer-king:mana_gem"
+      "item": "sorcerer-king:mana_gem"
     },
     "K": {
-      "tag": "minecraft:stick"
+      "item": "minecraft:stick"
     }
   },
   "result": {
