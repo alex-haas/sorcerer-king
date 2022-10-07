@@ -2,7 +2,13 @@
   "item.sorcerer-king.mana_cube": "Mana Cube",
   "item.sorcerer-king.magic_chisel": "Magic Chisel",
   "item.sorcerer-king.mana_gem": "Mana Gem",
+
   "block.sorcerer-king.mana_ore": "Mana Ore",
   "block.sorcerer-king.mana_block": "Mana Block",
-  "gui.spell_config.title": "Spell Config"
+
+  "gui.spell_config.title": "Spell Config",
+
+  "spells.heal": "Heal",
+  "spells.repair": "Repair",
+  "spells.absorb": "Absorb"
 }

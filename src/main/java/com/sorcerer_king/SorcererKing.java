@@ -9,7 +9,7 @@ import net.fabricmc.api.ModInitializer;
 public class SorcererKing implements ModInitializer {
     @Override
     public void onInitialize() {
-        Constants.LOGGER.info("Hello Fabric world from Server!");
+        Globals.LOGGER.info("Hello Fabric world from Server!");
         ModBlocks.registerModBlocks();
         ModItems.registerModItems();
         ModBiomeModifications.registerBiomeModifications();

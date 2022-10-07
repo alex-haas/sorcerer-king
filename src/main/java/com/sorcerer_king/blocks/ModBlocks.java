@@ -1,6 +1,6 @@
 package com.sorcerer_king.blocks;
 
-import com.sorcerer_king.Constants;
+import com.sorcerer_king.Globals;
 import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -15,9 +15,9 @@ public class ModBlocks {
         register(ManaBlock.ID, new ManaBlock());
     }
 
-    private static Block register(String blockName, Block block) {
+    private static void register(String blockName, Block block) {
         blocks.put(blockName, block);
-        return Registry.register(Registry.BLOCK, new Identifier(Constants.MOD_ID, blockName), block);
+        Registry.register(Registry.BLOCK, new Identifier(Globals.MOD_ID, blockName), block);
     }
 
     public static Block get(String itemName) {

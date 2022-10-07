@@ -30,7 +30,7 @@ public class ManaCube extends Item {
         if (world.isClient()) {
             if (playerEntity.isSneaking()) {
                 playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0F, 1.0F);
-                MinecraftClient.getInstance().setScreen(new SpellConfigScreen(new SpellConfigGui()));
+                MinecraftClient.getInstance().setScreen(new SpellConfigScreen(new SpellConfigGui(playerEntity)));
             }
         }
 

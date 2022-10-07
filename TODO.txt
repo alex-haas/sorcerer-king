@@ -9,6 +9,7 @@ Mechanics:
     Talent tree for passives?
     Equip Skills inside Mana Cube - Switch with mouse wheel
     Portals (Spawned by world gen? Spawn Monsters around them? Wave principle - Drops rare materials when closed. Should have Grades like in the Manga)
+    Charge Mechanic for strength of the cast
 Skills:
     Level 1:
         Heal
@@ -18,6 +19,7 @@ Skills:
         Paralysis   ( 60sec - Dmg will wake the monster up )
         Shield (blocks certain amount of damage)
         Lightning Arrow
+        Cultivate
     Level 3:
         Fusion Crafting? (For Creating Staff (Mana Cube + Mana Cube -> Dense Mana Cube, Dense Mana Cube + Generif Staff -> Mana Cube Staff) )
         Projectile Evasion

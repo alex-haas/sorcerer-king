@@ -1,6 +1,6 @@
 package com.sorcerer_king.biome_mods;
 
-import com.sorcerer_king.Constants;
+import com.sorcerer_king.Globals;
 import com.sorcerer_king.blocks.ManaOre;
 import com.sorcerer_king.blocks.ModBlocks;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -43,9 +43,9 @@ public class ModBiomeModifications {
                         HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(64))
                 ));
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Constants.MOD_ID, ManaOre.ID), manaOreFeature);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(Constants.MOD_ID, ManaOre.ID), placedFeature);
-        RegistryKey<PlacedFeature> oreRegistryKey = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Constants.MOD_ID, ManaOre.ID));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(Globals.MOD_ID, ManaOre.ID), manaOreFeature);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(Globals.MOD_ID, ManaOre.ID), placedFeature);
+        RegistryKey<PlacedFeature> oreRegistryKey = RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(Globals.MOD_ID, ManaOre.ID));
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreRegistryKey);
     }
 }

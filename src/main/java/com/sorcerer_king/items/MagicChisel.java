@@ -1,6 +1,6 @@
 package com.sorcerer_king.items;
 
-import com.sorcerer_king.Constants;
+import com.sorcerer_king.Globals;
 import com.sorcerer_king.blocks.ManaBlock;
 import com.sorcerer_king.blocks.ModBlocks;
 import com.sorcerer_king.item_groups.ItemGroups;
@@ -39,7 +39,7 @@ public class MagicChisel extends ToolItem {
         if (!context.getWorld().isClient()) {
             BlockState clickedBlockState = context.getWorld().getBlockState(context.getBlockPos());
             if (context.getPlayer() != null && clickedBlockState != null && clickedBlockState.getBlock() instanceof ManaBlock) {
-                Constants.LOGGER.info("You right clicked a magic cube with a magic chisel.");
+                Globals.LOGGER.info("You right clicked a magic cube with a magic chisel.");
                 context.getWorld().removeBlock(context.getBlockPos(), false);
                 ItemStack manaCube = new ItemStack(ModBlocks.get(ManaCube.ID));
                 context.getPlayer().giveItemStack(manaCube);

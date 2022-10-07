@@ -1,6 +1,6 @@
 package com.sorcerer_king.items;
 
-import com.sorcerer_king.Constants;
+import com.sorcerer_king.Globals;
 import com.sorcerer_king.blocks.ManaBlock;
 import com.sorcerer_king.blocks.ManaOre;
 import com.sorcerer_king.blocks.ModBlocks;
@@ -27,7 +27,7 @@ public class ModItems {
 
     private static void register(String itemName, Item item) {
         items.put(itemName, item);
-        Registry.register(Registry.ITEM, new Identifier(Constants.MOD_ID, itemName), item);
+        Registry.register(Registry.ITEM, new Identifier(Globals.MOD_ID, itemName), item);
     }
 
     private static void registerBlockItem(String blockName) {
