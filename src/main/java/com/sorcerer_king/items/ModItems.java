@@ -20,18 +20,19 @@ public class ModItems {
     public static void registerModItems() {
         register(ManaCube.ID, new ManaCube());
         register(MagicChisel.ID, new MagicChisel());
+        register(MagicGem.ID, new MagicGem());
         registerBlockItem(ManaOre.ID);
         registerBlockItem(ManaBlock.ID);
     }
 
-    private static Item register(String itemName, Item item) {
+    private static void register(String itemName, Item item) {
         items.put(itemName, item);
-        return Registry.register(Registry.ITEM, new Identifier(Constants.MOD_ID, itemName), item);
+        Registry.register(Registry.ITEM, new Identifier(Constants.MOD_ID, itemName), item);
     }
 
-    private static Item registerBlockItem(String blockName) {
+    private static void registerBlockItem(String blockName) {
         Block block = ModBlocks.get(blockName);
-        return register(blockName, new BlockItem(block, new FabricItemSettings().group(ItemGroups.MAIN)));
+        register(blockName, new BlockItem(block, new FabricItemSettings().group(ItemGroups.MAIN)));
     }
 
     public static Item get(String itemName) {

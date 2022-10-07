@@ -2,11 +2,14 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "sorcerer-king:mana_ore"
+          "name": "sorcerer-king:mana_gem"
         }
       ],
       "conditions": [
