@@ -1,7 +1,10 @@
 package com.sorcerer_king.items;
 
+import com.sorcerer_king.guis.SpellConfigGui;
+import com.sorcerer_king.guis.SpellConfigScreen;
 import com.sorcerer_king.item_groups.ItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,7 +27,13 @@ public class ManaCube extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
-        playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0F, 1.0F);
+        if (world.isClient()) {
+            if (playerEntity.isSneaking()) {
+                playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0F, 1.0F);
+                MinecraftClient.getInstance().setScreen(new SpellConfigScreen(new SpellConfigGui()));
+            }
+        }
+
         return TypedActionResult.success(playerEntity.getStackInHand(hand));
     }
 }

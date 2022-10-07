@@ -17,7 +17,10 @@ Skills:
         Shield (blocks certain amount of damage)
         Lightning Arrow
     Level 3:
-        Fusion Crafting? (For Creating Staff (Mana Cube + Mana Cube -> Dense Mana Cube, Dense Mana Cube + Generif Staff -> Archaic Staff) )
+        Fusion Crafting? (For Creating Staff (Mana Cube + Mana Cube -> Dense Mana Cube, Dense Mana Cube + Generif Staff -> Mana Cube Staff) )
+        Projectile Evasion
+        Magical Armor
+        Physical Enhancement
     Level ?
         Transmutation (Iron -> Gold, Coal -> Diamonds)
         Shield II + Shield III (different levels of same skills)
