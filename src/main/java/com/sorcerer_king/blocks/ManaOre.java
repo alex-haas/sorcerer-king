@@ -8,6 +8,6 @@ public class ManaOre extends Block {
     public static final String ID = "mana_ore";
 
     public ManaOre() {
-        super(FabricBlockSettings.of(Material.METAL).strength(4.0f));
+        super(FabricBlockSettings.of(Material.METAL).strength(3.0f));
     }
 }

@@ -5,10 +5,10 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Rarity;
 
-public class MagicGem extends Item {
+public class ManaGem extends Item {
     public static final String ID = "mana_gem";
 
-    public MagicGem() {
+    public ManaGem() {
         super(new FabricItemSettings()
                 .group(ItemGroups.MAIN)
                 .rarity(Rarity.COMMON)

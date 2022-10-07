@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WWW ",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "tag": "sorcerer-king:mana_gem"
+    }
+  },
+  "result": {
+    "item": "sorcerer-king:mana_block",
+    "count": 1
+  }
+}

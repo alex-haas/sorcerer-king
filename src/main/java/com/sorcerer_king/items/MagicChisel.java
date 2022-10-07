@@ -1,12 +1,14 @@
 package com.sorcerer_king.items;
 
 import com.sorcerer_king.Constants;
+import com.sorcerer_king.blocks.ManaBlock;
+import com.sorcerer_king.blocks.ModBlocks;
 import com.sorcerer_king.item_groups.ItemGroups;
+import com.sorcerer_king.materials.ModMaterials;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -14,15 +16,15 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class MagicChisel extends Item {
+public class MagicChisel extends ToolItem {
     public static final String ID = "magic_chisel";
 
     public MagicChisel() {
-        super(new FabricItemSettings()
+        super(ModMaterials.MANA_MATERIAL, new FabricItemSettings()
                 .group(ItemGroups.MAIN)
                 .rarity(Rarity.COMMON)
                 .maxCount(1)
-                .maxDamage(3)
+                .maxDamage(64)
         );
     }
 
@@ -34,9 +36,15 @@ public class MagicChisel extends Item {
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
-        if (context.getStack().getItem().equals(ModItems.get("magic_cube"))) {
-            Constants.LOGGER.info("You right clicked a magic cube with a magic chisel.");
-            return ActionResult.SUCCESS;
+        if (!context.getWorld().isClient()) {
+            BlockState clickedBlockState = context.getWorld().getBlockState(context.getBlockPos());
+            if (context.getPlayer() != null && clickedBlockState != null && clickedBlockState.getBlock() instanceof ManaBlock) {
+                Constants.LOGGER.info("You right clicked a magic cube with a magic chisel.");
+                context.getWorld().removeBlock(context.getBlockPos(), false);
+                ItemStack manaCube = new ItemStack(ModBlocks.get(ManaCube.ID));
+                context.getPlayer().giveItemStack(manaCube);
+                return ActionResult.SUCCESS;
+            }
         }
         return ActionResult.PASS;
     }

@@ -20,7 +20,7 @@ public class ModItems {
     public static void registerModItems() {
         register(ManaCube.ID, new ManaCube());
         register(MagicChisel.ID, new MagicChisel());
-        register(MagicGem.ID, new MagicGem());
+        register(ManaGem.ID, new ManaGem());
         registerBlockItem(ManaOre.ID);
         registerBlockItem(ManaBlock.ID);
     }
