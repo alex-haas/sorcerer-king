@@ -18,6 +18,11 @@ Skills:
         Heal
         Repair
     Level 2:
-        Sleep   ( 60sec - Dmg will wake the monster up )
+        Paralysis   ( 60sec - Dmg will wake the monster up )
+        Shield (blocks certain amount of damage)
+        Lightning Arrow
+    Level 3:
+        Fusion Crafting? (For Creating Staff (Mana Cube + Mana Cube -> Dense Mana Cube, Dense Mana Cube + Generif Staff -> Archaic Staff) )
     Level ?
         Transmutation (Iron -> Gold, Coal -> Diamonds)
+        Shield II + Shield III (different levels of same skills)
