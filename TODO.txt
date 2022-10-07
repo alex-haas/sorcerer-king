@@ -4,6 +4,7 @@ Blocks:
 Items:
     Mod Book
 Mechanics:
+    Mana Bar, which fills up very slowly
     Using skills increases efficiency
     Talent tree for passives?
     Equip Skills inside Mana Cube - Switch with mouse wheel
@@ -12,6 +13,7 @@ Skills:
     Level 1:
         Heal
         Repair
+        Absorb Mana Gem
     Level 2:
         Paralysis   ( 60sec - Dmg will wake the monster up )
         Shield (blocks certain amount of damage)
@@ -34,3 +36,9 @@ Items:
     Magic Chisel
     Mana Gems
     Mana Cube
+Recipes:
+    9 Mana Gems -> 1 Mana Block
+    1 Mana Block -> 9 Mana Gems
+    1 Mana Gem + Stick -> Magic Chisel
+Mechanics:
+    Right-Clicking a Mana Block with Magic Chisel produces a Mana Cube
