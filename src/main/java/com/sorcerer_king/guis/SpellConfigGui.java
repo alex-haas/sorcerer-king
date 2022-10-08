@@ -15,6 +15,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class SpellConfigGui extends LightweightGuiDescription {
+
     public SpellConfigGui(PlayerEntity playerEntity) {
         WGridPanel root = new WGridPanel();
         root.setSize(300, 200);
@@ -29,7 +30,10 @@ public class SpellConfigGui extends LightweightGuiDescription {
         ModPlayerComponent modPlayer = ModComponents.PLAYER.get(playerEntity);
         WDynamicLabel tierLabel = new WDynamicLabel(() -> I18n.translate("gui.spell_config.tier", modPlayer.getTier()));
         root.add(tierLabel, 1, 2);
-        WDynamicLabel manaLabel = new WDynamicLabel(() -> I18n.translate("gui.spell_config.mana", modPlayer.getCurrentMana(), modPlayer.getMaxMana()));
+
+        String currMana = Globals.DECIMAL_FORMAT.format(modPlayer.getCurrentMana());
+        String maxMana = Globals.DECIMAL_FORMAT.format(modPlayer.getMaxMana());
+        WDynamicLabel manaLabel = new WDynamicLabel(() -> I18n.translate("gui.spell_config.mana", currMana, maxMana));
         root.add(manaLabel, 1, 3);
 
         WButton healBtn = new WButton(new TextureIcon(new Identifier(Globals.MOD_ID, "spell/heal")), Text.translatable("spells.heal"));
