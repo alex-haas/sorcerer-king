@@ -10,7 +10,7 @@
   "gui.spell_config.tier": "Tier: %s",
   "gui.spell_config.mana": "Mana: %s/%s",
 
-  "spells.heal": "Heal",
-  "spells.repair": "Repair",
-  "spells.absorb": "Absorb"
+  "spell.heal": "Heal",
+  "spell.repair": "Repair",
+  "spell.absorb": "Absorb"
 }
