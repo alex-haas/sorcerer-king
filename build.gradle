@@ -11,8 +11,23 @@ repositories {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
     }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
+def libgui_version = "6.3.0+1.19"
+def cardinal_components_version = "5.0.2"
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -22,7 +37,10 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation include("io.github.cottonmc:LibGui:6.3.0+1.19")
+    modImplementation include("io.github.cottonmc:LibGui:${libgui_version}")
+    modImplementation include("curse.maven:cardinal-components-api-318449:3954769")
+    modImplementation include("curse.maven:cardinal-components-base-318449:3954770")
+    modImplementation include("curse.maven:cardinal-components-entity-318449:3954773")
 }
 
 processResources {

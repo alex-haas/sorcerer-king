@@ -1,6 +1,6 @@
 package com.sorcerer_king.item_groups;
 
-import com.sorcerer_king.Globals;
+import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.blocks.ModBlocks;
 import com.sorcerer_king.items.ManaCube;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;

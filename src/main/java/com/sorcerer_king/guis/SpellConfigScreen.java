@@ -7,4 +7,9 @@ public class SpellConfigScreen extends CottonClientScreen {
     public SpellConfigScreen(GuiDescription description) {
         super(description);
     }
+
+    @Override
+    public boolean shouldPause() {
+        return false;
+    }
 }

@@ -1,6 +1,6 @@
 package com.sorcerer_king.items;
 
-import com.sorcerer_king.Globals;
+import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.blocks.ManaBlock;
 import com.sorcerer_king.blocks.ModBlocks;
 import com.sorcerer_king.item_groups.ItemGroups;
@@ -18,7 +18,6 @@ import net.minecraft.world.World;
 
 public class MagicChisel extends ToolItem {
     public static final String ID = "magic_chisel";
-
     public MagicChisel() {
         super(ModMaterials.MANA_MATERIAL, new FabricItemSettings()
                 .group(ItemGroups.MAIN)

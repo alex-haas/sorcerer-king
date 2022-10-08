@@ -1,4 +1,4 @@
-package com.sorcerer_king;
+package com.sorcerer_king.common;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

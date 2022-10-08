@@ -2,6 +2,7 @@ package com.sorcerer_king;
 
 import com.sorcerer_king.biome_mods.ModBiomeModifications;
 import com.sorcerer_king.blocks.ModBlocks;
+import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 

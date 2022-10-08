@@ -1,6 +1,6 @@
 package com.sorcerer_king.blocks;
 
-import com.sorcerer_king.Globals;
+import com.sorcerer_king.common.Globals;
 import net.minecraft.block.Block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;

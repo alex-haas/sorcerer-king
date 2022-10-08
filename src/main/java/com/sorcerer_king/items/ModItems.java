@@ -1,6 +1,6 @@
 package com.sorcerer_king.items;
 
-import com.sorcerer_king.Globals;
+import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.blocks.ManaBlock;
 import com.sorcerer_king.blocks.ManaOre;
 import com.sorcerer_king.blocks.ModBlocks;

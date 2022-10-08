@@ -3,6 +3,8 @@ General:
 Blocks:
 Items:
     Mod Book
+    Ring of Mana Regeneration
+    Ring of Potency
 Mechanics:
     Mana Bar, which fills up very slowly
     Using skills increases efficiency
