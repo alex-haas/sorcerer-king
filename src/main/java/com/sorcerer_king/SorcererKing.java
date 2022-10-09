@@ -5,6 +5,7 @@ import com.sorcerer_king.blocks.ModBlocks;
 import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.common.spells.ModSpells;
 import com.sorcerer_king.items.ModItems;
+import com.sorcerer_king.server.ServerEventListener;
 import net.fabricmc.api.ModInitializer;
 
 
@@ -16,5 +17,9 @@ public class SorcererKing implements ModInitializer {
         ModBlocks.registerModBlocks();
         ModItems.registerModItems();
         ModBiomeModifications.registerBiomeModifications();
+
+        ServerEventListener.getInstance().init();
+        // new FileStorage(server.getWorldPath(LevelResource.ROOT).resolve("professions/playerdata"));
+
     }
 }
