@@ -26,7 +26,7 @@ public class ServerEventListener {
 
     private void onServerStart(MinecraftServer server) {
         Path playerDataPath = server.getSavePath(WorldSavePath.ROOT).resolve("sorcerer-king/playerdata");
-        PlayerManager.getInstance().init(playerDataPath);
+        FileDataStorage.getInstance().setPlayerDataPath(playerDataPath);
     }
 
     private void onPlayerLeave(ServerPlayNetworkHandler handler, MinecraftServer server) {
