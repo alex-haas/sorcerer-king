@@ -8,7 +8,7 @@ public abstract class ModSpell {
     public abstract String getId();
 
     public Identifier getIconIdentifier() {
-        return new Identifier(Globals.MOD_ID, "spell/" + getId());
+        return new Identifier(Globals.MOD_ID, "textures/spell/%s.png".formatted(getId()));
     }
 
     public Text getTitle() {
