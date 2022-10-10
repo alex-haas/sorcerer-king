@@ -1,11 +1,11 @@
 package com.sorcerer_king.common.components;
 
 import com.sorcerer_king.server.PlayerSaveData;
-import dev.onyxstudios.cca.api.v3.component.tick.ServerTickingComponent;
+import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 
-public class ModPlayer implements ModPlayerComponent, ServerTickingComponent {
+public class ModPlayer implements ModPlayerComponent, CommonTickingComponent {
     public static final String KEY_TIER = "tier";
     public static final String KEY_CURRENT_MANA = "current_mana";
     public static final String KEY_MAX_MANA = "max_mana";
@@ -58,8 +58,9 @@ public class ModPlayer implements ModPlayerComponent, ServerTickingComponent {
         return currentMana;
     }
 
+
     @Override
-    public void serverTick() {
+    public void tick() {
         currentMana += passiveManaReg;
         if (currentMana > maxMana) {
             currentMana = maxMana;
@@ -84,6 +85,20 @@ public class ModPlayer implements ModPlayerComponent, ServerTickingComponent {
             tier = saveData.tier();
             currentMana = saveData.currentMana();
         }
+        reloadDataForTier();
+    }
+
+    @Override
+    public void addMana(double mana) {
+        currentMana += mana;
+        if (currentMana > maxMana) {
+            currentMana = maxMana;
+        }
+    }
+
+    @Override
+    public void setTier(int newTier) {
+        tier = newTier;
         reloadDataForTier();
     }
 

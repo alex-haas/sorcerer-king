@@ -51,12 +51,12 @@ public class SpellConfigGui extends LightweightGuiDescription {
         WGridPanel panel = new WGridPanel();
         panel.setBackgroundPainter(BackgroundPainter.createColorful(Color.GREEN.toRgb()));
         WLabel tierLabel = new CustomWLabel(Text.literal("Tier " + tier), 6);
-        panel.add(tierLabel, 1, 1, 5, 1);
+        panel.add(tierLabel, 0, 0, 5, 1);
 
         WButton healBtn = new WButton(new TextureIcon(ModSpells.HEAL.getIconIdentifier()), ModSpells.HEAL.getTitle());
-        panel.add(healBtn, 1, 2, 3, 1);
+        panel.add(healBtn, 0, 2, 3, 1);
         WButton repairBtn = new WButton(new TextureIcon(ModSpells.REPAIR.getIconIdentifier()), ModSpells.REPAIR.getTitle());
-        panel.add(repairBtn, 2, 2, 3, 1);
+        panel.add(repairBtn, 4, 2, 3, 1);
         return panel;
     }
 }

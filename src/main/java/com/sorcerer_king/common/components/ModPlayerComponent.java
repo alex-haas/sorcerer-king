@@ -15,4 +15,8 @@ public interface ModPlayerComponent extends ComponentV3 {
     PlayerSaveData getSaveData();
 
     void applySaveData(@Nullable PlayerSaveData saveData);
+
+    void addMana(double i);
+
+    void setTier(int newTier);
 }
