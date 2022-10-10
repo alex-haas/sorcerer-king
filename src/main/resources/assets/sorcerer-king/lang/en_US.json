@@ -7,8 +7,9 @@
   "block.sorcerer-king.mana_block": "Mana Block",
 
   "gui.spell_config.title": "Spell Config",
-  "gui.spell_config.tier": "Tier: %s",
+  "gui.spell_config.tier": "Tier: %s - %s",
   "gui.spell_config.mana": "Mana: %s/%s",
+  "gui.spell_config.spell_tier_label": "Tier %s Spells",
 
   "spell.heal": "Heal",
   "spell.repair": "Repair",

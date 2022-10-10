@@ -26,7 +26,7 @@ There are 9 Levels, which can be achieved, and each one is several times stronge
 | 4    | High Mage     |      640 |               0.15 |
 | 5    | Arch-Wizard   |    2,400 |               0.30 |
 | 6    | Sage          |    8,000 |               0.60 |
-| 7    | Grand master  |   32,000 |               1.25 |
+| 7    | Grand Master  |   32,000 |               1.25 |
 | 8    | Demi-God      |  128,000 |               2.50 |
 | 9    | Sorcerer King |  512,000 |               5.00 |
 

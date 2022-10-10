@@ -19,4 +19,5 @@ public interface ModPlayerComponent extends ComponentV3 {
     void addMana(double i);
 
     void setTier(int newTier);
+    String getTierTitle();
 }

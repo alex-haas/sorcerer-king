@@ -4,6 +4,7 @@ import com.sorcerer_king.server.PlayerSaveData;
 import dev.onyxstudios.cca.api.v3.component.tick.CommonTickingComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import org.apache.commons.lang3.NotImplementedException;
 
 public class ModPlayer implements ModPlayerComponent, CommonTickingComponent {
     public static final String KEY_TIER = "tier";
@@ -100,6 +101,23 @@ public class ModPlayer implements ModPlayerComponent, CommonTickingComponent {
     public void setTier(int newTier) {
         tier = newTier;
         reloadDataForTier();
+    }
+
+    @Override
+    public String getTierTitle() {
+        switch (tier) {
+            case 0: return "Commoner";
+            case 1: return "Apprentice";
+            case 2: return "Intermediate";
+            case 3: return "Scholar";
+            case 4: return "High Mage";
+            case 5: return "Arch-Wizard";
+            case 6: return "Sage";
+            case 7: return "Grand Master";
+            case 8: return "Demi-God";
+            case 9: return "Sorcerer King";
+            default: throw new NotImplementedException();
+        }
     }
 
     private void reloadDataForTier() {
