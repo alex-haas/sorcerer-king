@@ -13,6 +13,7 @@ import io.github.cottonmc.cotton.gui.widget.data.Axis;
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import io.github.cottonmc.cotton.gui.widget.icon.TextureIcon;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Style;
@@ -27,31 +28,32 @@ public class SpellConfigGui extends LightweightGuiDescription {
     private static final int GRID_SIZE = 16;
     private static final int WINDOW_WIDTH = 20;
     private static final int WINDOW_HEIGHT = 12;
+    private final ModPlayerComponent player;
 
-    public SpellConfigGui(PlayerEntity playerEntity) {
-        ModPlayerComponent modPlayer = ModComponents.PLAYER.get(playerEntity);
+    public SpellConfigGui(ModPlayerComponent player) {
+        this.player = player;
 
         WBox root = new WBox(Axis.VERTICAL);
         root.setInsets(DEFAULT_INSETS);
         WScrollPanel scrollRoot = new WScrollPanel(root);
         scrollRoot.setSize(WINDOW_WIDTH * GRID_SIZE, WINDOW_HEIGHT * GRID_SIZE);
-        root.add(buildTitleBar(modPlayer));
-        root.add(buildSpellList(modPlayer));
+        root.add(buildTitleBar());
+        root.add(buildSpellList());
         setRootPanel(scrollRoot);
     }
 
-    private WWidget buildTitleBar(ModPlayerComponent modPlayer) {
+    private WWidget buildTitleBar() {
         WLabel titleLabel = new WLabel(Text.translatable("gui.spell_config.title").setStyle(Style.EMPTY.withBold(true)));
         WDynamicLabel tierLabel = new WDynamicLabel(() -> I18n.translate(
                 "gui.spell_config.tier",
-                modPlayer.getTier(),
-                modPlayer.getTierTitle()
+                player.getTier(),
+                player.getTierTitle()
 
         ));
         WDynamicLabel manaLabel = new WDynamicLabel(() -> I18n.translate(
                 "gui.spell_config.mana",
-                Globals.DECIMAL_FORMAT.format(modPlayer.getCurrentMana()),
-                Globals.DECIMAL_FORMAT.format(modPlayer.getMaxMana())
+                Globals.DECIMAL_FORMAT.format(player.getCurrentMana()),
+                Globals.DECIMAL_FORMAT.format(player.getMaxMana())
         ));
 
         WGridPanel panel = new WGridPanel(GRID_SIZE);
@@ -63,15 +65,15 @@ public class SpellConfigGui extends LightweightGuiDescription {
         return panel;
     }
 
-    private WWidget buildSpellList(ModPlayerComponent modPlayer) {
+    private WWidget buildSpellList() {
         WBox panel = new WBox(Axis.VERTICAL);
-        for (int i = 0; i < modPlayer.getTier(); i++) {
-            panel.add(genTierPanel(i + 1, modPlayer));
+        for (int i = 0; i < player.getTier(); i++) {
+            panel.add(genTierPanel(i + 1));
         }
         return panel;
     }
 
-    private WWidget genTierPanel(int tier, ModPlayerComponent modPlayer) {
+    private WWidget genTierPanel(int tier) {
         WBox panel = new WBox(Axis.VERTICAL);
         panel.setInsets(DEFAULT_INSETS);
         panel.setBackgroundPainter(BackgroundPainter.createColorful(colorForTier(tier)));
@@ -84,6 +86,7 @@ public class SpellConfigGui extends LightweightGuiDescription {
             for (ModSpell spell : row) {
                 WButton btn = new WButton(new TextureIcon(spell.getIconIdentifier()), spell.getTitle());
                 btn.setAlignment(HorizontalAlignment.LEFT);
+                btn.setOnClick(() -> onSpellButtonClicked(spell));
                 rowPanel.add(btn, GRID_SIZE * 5, GRID_SIZE);
             }
             panel.add(rowPanel);
@@ -91,10 +94,14 @@ public class SpellConfigGui extends LightweightGuiDescription {
 
         return panel;
     }
+    
+    private void onSpellButtonClicked(ModSpell spell) {
+        MinecraftClient.getInstance().setScreen(new ModScreen(new SpellConfigDetailGui(player, spell)));
+    }
 
     private ModSpell[] getModspells(int tier) {
         // Just demo code for now
-        return new ModSpell[] {ModSpells.HEAL, ModSpells.REPAIR, ModSpells.REPAIR, ModSpells.HEAL};
+        return new ModSpell[] {ModSpells.HEAL, ModSpells.REPAIR};
     }
 
     private int colorForTier(int tier) {

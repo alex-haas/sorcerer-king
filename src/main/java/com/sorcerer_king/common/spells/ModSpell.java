@@ -1,6 +1,7 @@
 package com.sorcerer_king.common.spells;
 
 import com.sorcerer_king.common.Globals;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -11,7 +12,7 @@ public abstract class ModSpell {
         return new Identifier(Globals.MOD_ID, "textures/spell/%s.png".formatted(getId()));
     }
 
-    public Text getTitle() {
+    public MutableText getTitle() {
         return Text.translatable("spell." + getId());
     }
 }

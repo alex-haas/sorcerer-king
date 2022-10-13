@@ -4,9 +4,11 @@ import com.sorcerer_king.common.components.ModComponents;
 import com.sorcerer_king.common.components.ModPlayerComponent;
 import com.sorcerer_king.item_groups.ItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Rarity;
@@ -30,6 +32,7 @@ public class ManaGem extends Item {
         if (modPlayer.getTier() == 0) {
             if (world.isClient()) {
                 playerEntity.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+                MinecraftClient.getInstance().particleManager.addEmitter(playerEntity, ParticleTypes.TOTEM_OF_UNDYING, 20);
             }
             modPlayer.setTier(1);
         }

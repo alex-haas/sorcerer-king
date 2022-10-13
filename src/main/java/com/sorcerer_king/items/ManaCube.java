@@ -1,7 +1,9 @@
 package com.sorcerer_king.items;
 
+import com.sorcerer_king.common.components.ModComponents;
+import com.sorcerer_king.common.components.ModPlayerComponent;
+import com.sorcerer_king.guis.ModScreen;
 import com.sorcerer_king.guis.SpellConfigGui;
-import com.sorcerer_king.guis.SpellConfigScreen;
 import com.sorcerer_king.item_groups.ItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.MinecraftClient;
@@ -30,7 +32,8 @@ public class ManaCube extends Item {
         if (world.isClient()) {
             if (playerEntity.isSneaking()) {
                 playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0F, 1.0F);
-                MinecraftClient.getInstance().setScreen(new SpellConfigScreen(new SpellConfigGui(playerEntity)));
+                ModPlayerComponent modPlayer = ModComponents.PLAYER.get(playerEntity);
+                MinecraftClient.getInstance().setScreen(new ModScreen(new SpellConfigGui(modPlayer)));
             }
         }
 
