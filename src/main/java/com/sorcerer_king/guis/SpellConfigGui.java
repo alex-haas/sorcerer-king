@@ -65,7 +65,6 @@ public class SpellConfigGui extends LightweightGuiDescription {
 
     private WWidget buildSpellList(ModPlayerComponent modPlayer) {
         WBox panel = new WBox(Axis.VERTICAL);
-
         for (int i = 0; i < modPlayer.getTier(); i++) {
             panel.add(genTierPanel(i + 1, modPlayer));
         }
