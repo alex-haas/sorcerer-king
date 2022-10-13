@@ -2,6 +2,7 @@ package com.sorcerer_king.server;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.common.components.ModPlayerComponent;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +44,8 @@ public class FileDataStorage {
     }
 
     public @Nullable PlayerSaveData readPlayerData(String playerUuid) {
-        Path fullPath = playerDataPath.resolve(playerUuid + ".json");
+        String saveFileName = Globals.DEBUG ? "player.json" : playerUuid + ".json";
+        Path fullPath = playerDataPath.resolve(saveFileName);
         if (Files.exists(fullPath)) {
             return read(fullPath, PlayerSaveData.class);
         }
@@ -51,7 +53,8 @@ public class FileDataStorage {
     }
 
     public void savePlayer(ModPlayerComponent modPlayer) {
-        Path fullPath = playerDataPath.resolve(modPlayer.getPlayer().getUuidAsString() + ".json");
+        String saveFileName = Globals.DEBUG ? "player.json" : modPlayer.getPlayer().getUuidAsString() + ".json";
+        Path fullPath = playerDataPath.resolve(saveFileName);
         PlayerSaveData saveData = modPlayer.getSaveData();
         write(fullPath, PlayerSaveData.class, saveData);
     }

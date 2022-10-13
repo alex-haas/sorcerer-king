@@ -33,7 +33,6 @@ public class SpellConfigGui extends LightweightGuiDescription {
 
         WBox root = new WBox(Axis.VERTICAL);
         root.setInsets(DEFAULT_INSETS);
-        //root.setBackgroundPainter(BackgroundPainter.createColorful(Color.MAGENTA_DYE.toRgb()));
         WScrollPanel scrollRoot = new WScrollPanel(root);
         scrollRoot.setSize(WINDOW_WIDTH * GRID_SIZE, WINDOW_HEIGHT * GRID_SIZE);
         root.add(buildTitleBar(modPlayer));
@@ -67,8 +66,7 @@ public class SpellConfigGui extends LightweightGuiDescription {
     private WWidget buildSpellList(ModPlayerComponent modPlayer) {
         WBox panel = new WBox(Axis.VERTICAL);
 
-        //panel.setBackgroundPainter(BackgroundPainter.createColorful(Color.ORANGE_DYE.toRgb()));
-        for (int i = 0; i < 9 /*modPlayer.getTier()*/; i++) {
+        for (int i = 0; i < modPlayer.getTier(); i++) {
             panel.add(genTierPanel(i + 1, modPlayer));
         }
         return panel;
