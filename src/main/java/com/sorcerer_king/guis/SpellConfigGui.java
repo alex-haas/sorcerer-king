@@ -1,8 +1,10 @@
 package com.sorcerer_king.guis;
 
+import com.google.common.collect.Lists;
 import com.sorcerer_king.common.Globals;
 import com.sorcerer_king.common.components.ModComponents;
 import com.sorcerer_king.common.components.ModPlayerComponent;
+import com.sorcerer_king.common.spells.ModSpell;
 import com.sorcerer_king.common.spells.ModSpells;
 import io.github.cottonmc.cotton.gui.client.BackgroundPainter;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
@@ -16,6 +18,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import org.apache.commons.lang3.NotImplementedException;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class SpellConfigGui extends LightweightGuiDescription {
     private static final Insets DEFAULT_INSETS = new Insets(8, 16);
@@ -51,7 +56,7 @@ public class SpellConfigGui extends LightweightGuiDescription {
         ));
 
         WGridPanel panel = new WGridPanel(GRID_SIZE);
-        int middleWidth = (WINDOW_WIDTH - 2) / 2;
+        int middleWidth = (WINDOW_WIDTH - 4) / 2;
         panel.add(titleLabel, 0, 0, middleWidth, 1);
         panel.add(tierLabel, middleWidth, 0, middleWidth, 1);
         panel.add(manaLabel, middleWidth, 1, middleWidth, 1);
@@ -70,21 +75,29 @@ public class SpellConfigGui extends LightweightGuiDescription {
     }
 
     private WWidget genTierPanel(int tier, ModPlayerComponent modPlayer) {
-        WGridPanel panel = new WGridPanel();
+        WBox panel = new WBox(Axis.VERTICAL);
         panel.setInsets(DEFAULT_INSETS);
         panel.setBackgroundPainter(BackgroundPainter.createColorful(colorForTier(tier)));
         WLabel tierLabel = new WLabel(Text.translatable("gui.spell_config.spell_tier_label", tier));
-        panel.add(tierLabel, 0, 0, WINDOW_WIDTH - 6, 1);
+        panel.add(tierLabel);
 
-        WButton healBtn = new WButton(new TextureIcon(ModSpells.HEAL.getIconIdentifier()), ModSpells.HEAL.getTitle());
-        healBtn.setAlignment(HorizontalAlignment.LEFT);
-        panel.add(healBtn, 0, 1, 3, 1);
-
-        WButton repairBtn = new WButton(new TextureIcon(ModSpells.REPAIR.getIconIdentifier()), ModSpells.REPAIR.getTitle());
-        repairBtn.setAlignment(HorizontalAlignment.LEFT);
-        panel.add(repairBtn, 4, 1, 3, 1);
+        ModSpell[] spells = getModspells(tier);
+        for (List<ModSpell> row : Lists.partition(Arrays.stream(spells).toList(), 3)) {
+            WBox rowPanel = new WBox(Axis.HORIZONTAL);
+            for (ModSpell spell : row) {
+                WButton btn = new WButton(new TextureIcon(spell.getIconIdentifier()), spell.getTitle());
+                btn.setAlignment(HorizontalAlignment.LEFT);
+                rowPanel.add(btn, GRID_SIZE * 5, GRID_SIZE);
+            }
+            panel.add(rowPanel);
+        }
 
         return panel;
+    }
+
+    private ModSpell[] getModspells(int tier) {
+        // Just demo code for now
+        return new ModSpell[] {ModSpells.HEAL, ModSpells.REPAIR, ModSpells.REPAIR, ModSpells.HEAL};
     }
 
     private int colorForTier(int tier) {
