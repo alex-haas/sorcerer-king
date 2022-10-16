@@ -9,6 +9,7 @@
   - Mod Book
   - Ring of Mana Regeneration
   - Ring of Potency
+  - Angels Halo (Bauble? Prevents any Status like poison / burn / Lava damage)
 - Mechanics:
   - Mana Bar, which fills up very slowly
   - Using skills increases efficiency
@@ -31,10 +32,22 @@
     - Projectile Evasion
     - Magical Armor
     - Physical Enhancement
+  - Level 4:
+    - Flight
+    - Eternal Enhancement (external wisdom)
+    - Chain Lightning
+    - Lightning of Destruction (Lightning Sword?)
+  - Level 5:
+    - Great Piercing Mana Spear (Dark Soals Lightning Spear)
+  - Level 8:
+    - Dragons Heart (Necessary to go to Level 9)
   - Level ?
     - Transmutation (Iron -> Gold, Coal -> Diamonds)
     - Shield II + Shield III (different levels of same skills)
-
+- Talent Tree (WoW Style)
+  - 'Mana' tree
+    - Max Mana (5 points, each +20% max mana)
+    - Skill: 
 
 # Done so far
 - Blocks:

@@ -22,11 +22,16 @@ public class ServerEventListener {
         ServerLifecycleEvents.SERVER_STARTING.register(this::onServerStart);
         ServerPlayConnectionEvents.JOIN.register(this::onPlayerJoin);
         ServerPlayConnectionEvents.DISCONNECT.register(this::onPlayerLeave);
+        ServerLifecycleEvents.SERVER_STOPPING.register(this::onServerStop);
     }
 
     private void onServerStart(MinecraftServer server) {
         Path playerDataPath = server.getSavePath(WorldSavePath.ROOT).resolve("sorcerer-king/playerdata");
         FileDataStorage.getInstance().setPlayerDataPath(playerDataPath);
+    }
+
+    private void onServerStop(MinecraftServer server) {
+        // todo: check if just closing the server will trigger the disconnect action - else implement a save here
     }
 
     private void onPlayerLeave(ServerPlayNetworkHandler handler, MinecraftServer server) {

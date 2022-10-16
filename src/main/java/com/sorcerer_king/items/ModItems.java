@@ -18,7 +18,7 @@ public class ModItems {
     private static final HashMap<String, Item> items = new HashMap<>();
 
     public static void registerModItems() {
-        register(ManaCube.ID, new ManaCube());
+        register(ManaCubeItem.ID, new ManaCubeItem());
         register(MagicChisel.ID, new MagicChisel());
         register(ManaGem.ID, new ManaGem());
         registerBlockItem(ManaOre.ID);

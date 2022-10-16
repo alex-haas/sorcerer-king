@@ -13,6 +13,7 @@ public class ModBlocks {
     public static void registerModBlocks() {
         register(ManaOre.ID, new ManaOre());
         register(ManaBlock.ID, new ManaBlock());
+        register(ManaCubeBlock.ID, new ManaCubeBlock());
     }
 
     private static void register(String blockName, Block block) {
@@ -23,5 +24,4 @@ public class ModBlocks {
     public static Block get(String itemName) {
         return blocks.get(itemName);
     }
-
 }

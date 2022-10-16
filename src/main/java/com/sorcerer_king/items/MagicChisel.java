@@ -40,7 +40,7 @@ public class MagicChisel extends ToolItem {
             if (context.getPlayer() != null && clickedBlockState != null && clickedBlockState.getBlock() instanceof ManaBlock) {
                 Globals.LOGGER.info("You right clicked a magic cube with a magic chisel.");
                 context.getWorld().removeBlock(context.getBlockPos(), false);
-                ItemStack manaCube = new ItemStack(ModBlocks.get(ManaCube.ID));
+                ItemStack manaCube = new ItemStack(ModBlocks.get(ManaCubeItem.ID));
                 context.getPlayer().giveItemStack(manaCube);
                 return ActionResult.SUCCESS;
             }
